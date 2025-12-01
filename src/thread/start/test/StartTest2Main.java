@@ -2,13 +2,13 @@ package thread.start.test;
 
 import static util.MyLogger.log;
 
-public class StartTest1Main {
+public class StartTest2Main {
     public static void main(String[] args) {
-        CounterThread counterThread = new CounterThread();
-        counterThread.start();
+        Thread thread = new Thread(new CounterThread());
+        thread.start();
     }
 
-    static class CounterThread extends Thread {
+    static class CounterThread implements Runnable {
         @Override
         public void run() {
             try {
